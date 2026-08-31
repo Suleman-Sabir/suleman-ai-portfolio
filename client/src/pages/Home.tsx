@@ -1,4 +1,4 @@
-// Signal Atelier design system: dark editorial AI-systems interface, cobalt signal lines, asymmetric content bands, restrained motion, and factual professional positioning.
+// Signal Atelier design system: dark editorial AI-systems interface, ember-orange signal lines, peach secondary cues, asymmetric content bands, restrained motion, and factual professional positioning.
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import {
   ArrowDownRight,

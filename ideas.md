@@ -29,15 +29,16 @@ Contemporary digital editorialism blended with Swiss International Style and obs
 4. **Credible restraint:** No invented metrics, testimonials, logos, or claims; the interface earns trust through clarity and craft.
 
 ### Color Philosophy
-Near-black navy is the working environment; off-white is the readable signal; electric blue marks action, links, and system flow; violet is reserved for secondary intelligence cues. Color should feel like a live engineering console distilled into a premium personal product surface, never like a gaming UI.
+
+Near-black navy is the working environment; off-white is the readable signal; Ember Orange marks action, links, and system flow; Peach Signal is reserved for secondary intelligence cues and soft highlights. Color should feel like a live engineering console warmed by human intent, never like a gaming UI.
 
 ### Layout Paradigm
 A left-anchored editorial rail and asymmetric content bands. Section headers sit in a narrow label column while content expands into wide, offset panels. Projects are the centerpiece: oversized cards use split layouts, architecture diagrams, and stacked metadata rather than uniform tiles.
 
 ### Signature Elements
-- Thin cobalt signal lines and node markers connecting ideas across sections.
+- Thin ember-orange signal lines and node markers connecting ideas across sections.
 - Small uppercase system labels with indexed section numbers.
-- A recurring “pulse” motif: a compact blue dot, short rule, and monospace status text.
+- A recurring “pulse” motif: a compact orange dot, short rule, and monospace status text.
 
 ### Interaction Philosophy
 Interactions should feel like inspecting a system: hover reveals more structure, project cards open a focused detail drawer, and navigation moves smoothly without theatrics. Buttons respond with a slight press scale and color shift; focus states remain visible and deliberate.
@@ -64,7 +65,7 @@ Example lines:
 A custom “SS” signal mark: two offset cobalt brackets interlocking around a single node, suggesting a loop between inputs and intelligent outputs. The mark is symbol-only and pairs with the name set in Space Grotesk rather than a default logo font.
 
 ### Signature Brand Color
-**Signal Cobalt — `#4D7CFE`**. A crisp, ownable electric blue that reads clearly on near-black surfaces and represents clarity, connection, and forward motion.
+**Ember Orange — `#FF7A45`**, paired with **Peach Signal — `#FFC1A6`**. The orange carries action, clarity, and forward motion; peach softens the system language without losing contrast on near-black surfaces.
 
 ## Content guardrails
 
@@ -73,6 +74,6 @@ Use only the professional facts and project details supplied in the brief. Do no
 ## Style Decisions
 
 - Visual assets must read as engineered system schematics, architecture flows, product surfaces, or annotated pipelines; avoid generic glowing neural networks, sci-fi light trails, and gaming-style AI energy.
-- Every major section uses at least one cobalt signal primitive: a node, short rule, indexed label, pulse dot, or connected line from the same restrained grammar.
+- Every major section uses at least one warm signal primitive: an orange node, short rule, indexed label, pulse dot, or connected line from the same restrained grammar.
 - Copy stays engineer-to-engineer: practical, specific, and grounded in system layers, retrieval, orchestration, backend reliability, and productization.
 - The SS mark is treated as a primary identity element in the header, hero system visual, experience highlight, and footer rather than a decorative favicon alone.
