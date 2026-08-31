@@ -132,7 +132,7 @@ a { color: inherit; text-decoration: none; }
 .nav-cta:hover { background: rgba(255,122,69,.2) !important; transform: translateY(-1px); }
 .mobile-menu { display: none; color: #eef2ff; background: transparent; }
 
-.hero { min-height: 850px; position: relative; display: flex; align-items: center; overflow: hidden; background: #080b14 url("/manus-storage/suleman-hero-signal_a4f00e3e.jpg") center right / cover no-repeat; background-blend-mode: normal; }
+.hero { min-height: 850px; position: relative; display: flex; align-items: center; overflow: hidden; background: #080b14 url("/assets/suleman-hero-signal.png") center right / cover no-repeat; background-blend-mode: normal; }
 .hero::before { content: ""; position: absolute; z-index: 1; inset: 0; background: rgba(255,122,69,.13); mix-blend-mode: color; pointer-events: none; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #080b14 0%, rgba(8,11,20,.94) 37%, rgba(8,11,20,.55) 70%, rgba(8,11,20,.3)); }
 .hero-grid { position: absolute; inset: 0; opacity: .27; background-image: linear-gradient(rgba(108,127,170,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(108,127,170,.12) 1px, transparent 1px); background-size: 74px 74px; mask-image: linear-gradient(90deg, #000, transparent 78%); }

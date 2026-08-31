@@ -8,7 +8,22 @@
 
 ## GitHub push
 
-- [ ] Inspect the authenticated GitHub account and existing repository state.
-- [ ] Create or prepare a private repository for the portfolio.
-- [ ] Commit and push the project code.
-- [ ] Verify the remote URL and pushed branch.
+- [x] Inspect the authenticated GitHub account and existing repository state.
+- [x] Create or prepare a private repository for the portfolio.
+- [x] Commit and push the project code.
+- [x] Verify the remote URL and pushed branch.
+
+## Live publishing
+
+- [x] Confirm the portfolio is compatible with managed static hosting.
+- [x] Decide whether to use Manus Publish or an external provider.
+- [x] Prepare any required publishing configuration.
+- [x] Provide the user with the exact final publishing action and live-access path.
+
+## Local asset migration
+
+- [x] Inventory every `/manus-storage` reference and locate its source file.
+- [x] Copy generated assets into a repository-local public asset folder.
+- [x] Rewrite CSS, JSX, and metadata references to local paths.
+- [x] Build and verify that no `/manus-storage` links remain.
+- [ ] Save and deliver the migrated project version.
