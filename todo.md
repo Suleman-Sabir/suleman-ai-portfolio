@@ -42,3 +42,17 @@
 - [x] Commit the latest polished portfolio changes.
 - [x] Push the commit to GitHub main.
 - [x] Verify the remote commit and clean working tree.
+
+## Vercel deployment check
+
+- [ ] Inspect available Vercel access or connected deployment metadata.
+- [ ] Check whether commit `9886174` is deployed successfully.
+- [ ] Verify the deployment URL and current status.
+- [ ] Report the result and any required user action.
+
+## Formspree contact form
+
+- [x] Collect the user’s real Formspree endpoint.
+- [x] Wire the form to Formspree with submitting, success, and error states.
+- [x] Remove the demo-only contact-form message.
+- [x] Verify the build and commit the integration.

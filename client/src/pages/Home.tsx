@@ -183,7 +183,8 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const [formSent, setFormSent] = useState(false);
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formError, setFormError] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -199,9 +200,29 @@ export default function Home() {
     setMenuOpen(false);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setFormSent(true);
+    const form = event.currentTarget;
+    setFormStatus("submitting");
+    setFormError("");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xwlklkka", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok) {
+        const detail = payload?.errors?.map((item: { message?: string }) => item.message).filter(Boolean).join(" ");
+        throw new Error(detail || "We could not send your message. Please try again or use the email link above.");
+      }
+      form.reset();
+      setFormStatus("success");
+    } catch (error) {
+      setFormStatus("error");
+      setFormError(error instanceof Error ? error.message : "We could not send your message. Please try again.");
+    }
   };
 
   const currentYear = useMemo(() => new Date().getFullYear(), []);
@@ -282,7 +303,7 @@ export default function Home() {
         </section>
 
         <section className="section section--contact" id="contact">
-          <div className="container contact-layout"><div className="contact-copy reveal"><div className="section-kicker"><span className="section-number">09</span><span>Open channel / 09</span></div><h2>Let&apos;s build something <em>intelligent.</em></h2><p>Have an AI product idea, automation challenge, or backend system in mind? Let&apos;s connect and explore how it can be turned into a practical solution.</p><div className="contact-details"><a href="mailto:sulemansabir00@gmail.com"><Mail size={17} /> suleman<span>sabir00</span>@gmail.com <ArrowUpRight size={14} /></a><a href="https://linkedin.com/in/suleman-sabir" target="_blank" rel="noreferrer"><Linkedin size={17} /> linkedin.com/in/suleman-sabir <ArrowUpRight size={14} /></a><a href="tel:+923064499757"><Phone size={17} /> +92 306-4499757 <ArrowUpRight size={14} /></a><span><MapPin size={17} /> Lahore, Punjab, Pakistan</span></div></div><form className="contact-form reveal" onSubmit={handleSubmit}><div className="form-header"><span className="mono-label">Send a signal</span><span className="form-status"><span className="status-dot" /> {formSent ? "Captured locally" : "Front-end form"}</span></div><label>Name<input name="name" required placeholder="Your name" /></label><label>Email<input name="email" type="email" required placeholder="you@company.com" /></label><label>Subject<input name="subject" required placeholder="What are you building?" /></label><label>Message<textarea name="message" required placeholder="Tell me a little about the system or challenge." rows={4} /></label><Button type="submit" className="button button--primary button--form">{formSent ? "Message noted" : "Send message"} {formSent ? <Check size={16} /> : <Send size={15} />}</Button>{formSent && <p className="form-note"><MessageSquareText size={14} /> This demo form is not connected to an email backend yet. Please use the email link above to reach Suleman directly.</p>}</form></div>
+          <div className="container contact-layout"><div className="contact-copy reveal"><div className="section-kicker"><span className="section-number">09</span><span>Open channel / 09</span></div><h2>Let&apos;s build something <em>intelligent.</em></h2><p>Have an AI product idea, automation challenge, or backend system in mind? Let&apos;s connect and explore how it can be turned into a practical solution.</p><div className="contact-details"><a href="mailto:sulemansabir00@gmail.com"><Mail size={17} /> suleman<span>sabir00</span>@gmail.com <ArrowUpRight size={14} /></a><a href="https://linkedin.com/in/suleman-sabir" target="_blank" rel="noreferrer"><Linkedin size={17} /> linkedin.com/in/suleman-sabir <ArrowUpRight size={14} /></a><a href="tel:+923064499757"><Phone size={17} /> +92 306-4499757 <ArrowUpRight size={14} /></a><span><MapPin size={17} /> Lahore, Punjab, Pakistan</span></div></div><form className="contact-form reveal" onSubmit={handleSubmit}><div className="form-header"><span className="mono-label">Send a signal</span><span className="form-status" aria-live="polite"><span className={`status-dot ${formStatus === "error" ? "status-dot--error" : ""}`} /> {formStatus === "submitting" ? "Sending" : formStatus === "success" ? "Delivered" : formStatus === "error" ? "Retry required" : "Secure channel"}</span></div><label>Name<input name="name" required placeholder="Your name" /></label><label>Email<input name="email" type="email" required placeholder="you@company.com" /></label><label>Subject<input name="subject" required placeholder="What are you building?" /></label><label>Message<textarea name="message" required placeholder="Tell me a little about the system or challenge." rows={4} /></label><Button type="submit" disabled={formStatus === "submitting"} className="button button--primary button--form">{formStatus === "submitting" ? "Sending message" : formStatus === "success" ? "Message sent" : "Send message"} {formStatus === "success" ? <Check size={16} /> : <Send size={15} />}</Button>{formStatus === "success" && <p className="form-note" aria-live="polite"><MessageSquareText size={14} /> Thanks — your message was sent successfully. Suleman can reply directly to your email.</p>}{formStatus === "error" && <p className="form-note form-note--error" aria-live="polite"><MessageSquareText size={14} /> {formError}</p>}</form></div>
         </section>
 
         <section className="final-cta"><div className="container final-cta__inner"><div><span className="mono-label">One more thing</span><h2>Building the next intelligent system?</h2></div><button onClick={() => scrollTo("contact")}>Let&apos;s talk <ArrowUpRight size={17} /></button></div></section>
