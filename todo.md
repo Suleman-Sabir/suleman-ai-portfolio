@@ -35,3 +35,10 @@
 - [x] Refine responsive spacing and mobile interaction details.
 - [x] Verify build, preview, navigation, and project detail interactions.
 - [ ] Save and deliver the polished version.
+
+## Commit latest polish
+
+- [x] Inspect the current local git state.
+- [x] Commit the latest polished portfolio changes.
+- [x] Push the commit to GitHub main.
+- [x] Verify the remote commit and clean working tree.
