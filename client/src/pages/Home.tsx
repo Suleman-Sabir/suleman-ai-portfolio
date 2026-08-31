@@ -82,7 +82,7 @@ const projects: Project[] = [
     highlights: ["Built a 5-stage AI recruitment pipeline.", "Implemented a Python-based orchestration layer.", "Used Llama 3.3 70B through Groq.", "Designed a PostgreSQL database architecture.", "Implemented role-based authentication for HR and employees.", "Integrated GitHub API for candidate sourcing.", "Implemented resume parsing using PyPDF2/python-docx.", "Integrated Gmail SMTP for automated interview invitations.", "Added analytics and reporting with CSV, Excel, and PDF exports."],
     architecture: ["Job Description", "Candidate Sourcing", "CV Parsing", "AI Filtering", "Interview Scheduling"],
     github: "https://github.com/Suleman-Sabir/Hire-Mind",
-    image: "/assets/recruvex-architecture.png",
+    image: "/assets/recruvex-architecture.webp",
     accent: "cobalt",
   },
   {
@@ -96,7 +96,7 @@ const projects: Project[] = [
     features: ["Document-based knowledge retrieval", "Context-aware responses", "Natural-language interaction", "Knowledge grounding", "LLM integration"],
     highlights: ["Designed around retrieval before generation.", "Connects document knowledge to a natural-language interaction layer.", "Keeps answers grounded in the relevant context surfaced from the knowledge base.", "Focuses on making stored information easier to explore and understand."],
     architecture: ["User", "Document Knowledge Base", "Retrieval", "Relevant Context", "LLM", "Context-Aware Answer"],
-    image: "/assets/knowva-rag-architecture.png",
+    image: "/assets/knowva-rag-architecture.webp",
     accent: "violet",
   },
 ];

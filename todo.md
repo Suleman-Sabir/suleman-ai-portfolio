@@ -27,3 +27,11 @@
 - [x] Rewrite CSS, JSX, and metadata references to local paths.
 - [x] Build and verify that no `/manus-storage` links remain.
 - [ ] Save and deliver the migrated project version.
+
+## Polish pass
+
+- [x] Tighten hero composition, typography rhythm, and warm signal contrast.
+- [x] Improve section rails, card depth, and architecture visual consistency.
+- [x] Refine responsive spacing and mobile interaction details.
+- [x] Verify build, preview, navigation, and project detail interactions.
+- [ ] Save and deliver the polished version.
