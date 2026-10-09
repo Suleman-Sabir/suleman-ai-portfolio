@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
 function Router() {
@@ -17,14 +17,21 @@ function Router() {
   );
 }
 
+function ThemedApp() {
+  const { theme } = useTheme();
+  return (
+    <TooltipProvider>
+      <Toaster theme={theme} />
+      <Router />
+    </TooltipProvider>
+  );
+}
+
 export default function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <Toaster theme="dark" />
-          <Router />
-        </TooltipProvider>
+      <ThemeProvider defaultTheme="dark" switchable>
+        <ThemedApp />
       </ThemeProvider>
     </ErrorBoundary>
   );

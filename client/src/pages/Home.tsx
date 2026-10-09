@@ -22,16 +22,19 @@ import {
   MessageSquareText,
   Network,
   PanelTop,
+  Moon,
   Phone,
   Plus,
   Send,
   Server,
   Sparkles,
+  Sun,
   Workflow,
   X,
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/contexts/ThemeContext";
 
 type Icon = typeof Bot;
 
@@ -182,6 +185,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [formError, setFormError] = useState("");
@@ -239,7 +243,10 @@ export default function Home() {
             {navItems.map(([label, id]) => <button key={id} onClick={() => scrollTo(id)}>{label}</button>)}
             <button className="nav-cta" onClick={() => scrollTo("contact")}>Let&apos;s connect <ArrowUpRight size={14} /></button>
           </nav>
-          <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
+          <div className="nav-actions">
+            <button className="theme-toggle" onClick={toggleTheme} aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}>{theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}</button>
+            <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
+          </div>
         </div>
       </header>
 
