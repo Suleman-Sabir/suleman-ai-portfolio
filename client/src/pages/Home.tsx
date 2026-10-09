@@ -110,12 +110,12 @@ const skillGroups = [
 ];
 
 const certifications = [
-  ["01", "Fundamentals of Modern AI Python Level 1", "PIAIC"],
-  ["02", "Prompt and Context Engineering: Effective AI Communication Level 1", "PIAIC"],
-  ["03", "Introduction to Agent Skills", "Anthropic"],
-  ["04", "Claude Code in Action", "Anthropic"],
-  ["05", "Claude Code 101", "Anthropic"],
-  ["06", "AI Capabilities and Limitations", "Anthropic"],
+  ["01", "Fundamentals of Modern AI Python Level 1", "PIAIC", "https://panaversity.org/p/sulemanbhatti690-j62u"],
+  ["02", "Prompt and Context Engineering: Effective AI Communication Level 1", "PIAIC", "https://panaversity.org/p/sulemanbhatti690-j62u"],
+  ["03", "Introduction to Agent Skills", "Anthropic", "https://verify.skilljar.com/c/rsih5zmgutgr"],
+  ["04", "Claude Code in Action", "Anthropic", "https://verify.skilljar.com/c/ff9uabw6ihx5"],
+  ["05", "Claude Code 101", "Anthropic", "https://verify.skilljar.com/c/q3vdajm4x3wx"],
+  ["06", "AI Capabilities and Limitations", "Anthropic", "https://verify.skilljar.com/c/euxgbaktvehq"],
 ];
 
 function SectionIntro({ number, eyebrow, title, copy }: { number: string; eyebrow: string; title: string; copy?: string }) {
@@ -279,7 +279,7 @@ export default function Home() {
         </section>
 
         <section className="section section--experience" id="experience">
-          <div className="container section-layout"><SectionIntro number="04" eyebrow="Experience / 03" title="Professional experience" copy="A focused chapter working on AI applications and enterprise workflows." /><div className="experience-card reveal"><div className="experience-meta"><span className="mono-label">02.2026 — 07.2026</span><span className="experience-duration">6 months</span><span className="location"><MapPin size={14} /> 38/9 Habib Road, Saddar Town, Lahore</span></div><div className="experience-main"><div className="experience-heading"><div><h3>AI Engineer</h3><p>EpicSoft Technologies</p></div><span className="experience-mark"><SignalMark small /></span></div><p className="experience-description">Built and supported AI-powered applications using Python and FastAPI. Assisted in developing AI agents, workflow automation, and LLM-based solutions. Worked with REST APIs, cloud services, and collaborated on enterprise AI projects.</p><div className="highlight-card"><div className="highlight-card__title"><span className="status-dot" /> Project highlight</div><h4>AI Customer Support Agent</h4><p>Developed an AI-powered customer support agent using Python, FastAPI, and OpenAI APIs to automate customer queries, retrieve knowledge from a document base using RAG, and provide context-aware responses through a REST API.</p><div className="highlight-stack"><span>Python</span><span>FastAPI</span><span>OpenAI APIs</span><span>RAG</span><span>REST API</span></div></div></div></div></div>
+          <div className="container section-layout"><SectionIntro number="04" eyebrow="Experience / 03" title="Professional experience" copy="A focused chapter working on AI applications and enterprise workflows." /><div className="experience-card reveal"><div className="experience-meta"><span className="mono-label">02.2026 — 07.2026</span><span className="experience-duration">3 months</span><span className="location"><MapPin size={14} /> 38/9 Habib Road, Saddar Town, Lahore</span></div><div className="experience-main"><div className="experience-heading"><div><h3>AI Engineer</h3><p>EpicSoft Technologies</p></div><span className="experience-mark"><SignalMark small /></span></div><p className="experience-description">Built and supported AI-powered applications using Python and FastAPI. Assisted in developing AI agents, workflow automation, and LLM-based solutions. Worked with REST APIs, cloud services, and collaborated on enterprise AI projects.</p><div className="highlight-card"><div className="highlight-card__title"><span className="status-dot" /> Project highlight</div><h4>AI Customer Support Agent</h4><p>Developed an AI-powered customer support agent using Python, FastAPI, and OpenAI APIs to automate customer queries, retrieve knowledge from a document base using RAG, and provide context-aware responses through a REST API.</p><div className="highlight-stack"><span>Python</span><span>FastAPI</span><span>OpenAI APIs</span><span>RAG</span><span>REST API</span></div></div></div></div></div>
         </section>
 
         <section className="section section--projects" id="projects">
@@ -295,7 +295,7 @@ export default function Home() {
         </section>
 
         <section className="section section--certs" id="certifications">
-          <div className="container section-layout"><SectionIntro number="08" eyebrow="Learning / 07" title="Certifications" copy="Selected learning milestones across AI, prompt design, and agentic development." /><div className="cert-list reveal">{certifications.map(([index, title, issuer]) => <div className="cert-row" key={title}><span className="cert-index">{index}</span><span className="cert-title">{title}</span><span className="cert-issuer">{issuer}</span><span className="cert-arrow"><ArrowUpRight size={15} /></span></div>)}</div></div>
+          <div className="container section-layout"><SectionIntro number="08" eyebrow="Learning / 07" title="Certifications" copy="Selected learning milestones across AI, prompt design, and agentic development." /><div className="cert-list reveal">{certifications.map(([index, title, issuer, url]) => <a className="cert-row" key={title} href={url} target="_blank" rel="noreferrer"><span className="cert-index">{index}</span><span className="cert-title">{title}</span><span className="cert-issuer">{issuer}</span><span className="cert-arrow"><ArrowUpRight size={15} /></span></a>)}</div></div>
         </section>
 
         <section className="section section--education" id="education">
